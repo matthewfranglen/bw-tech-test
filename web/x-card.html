@@ -8,7 +8,9 @@
         <div layout horizontal center-justified flex>
           <content></content>
         </div>
-        <paper-icon-button id="act" icon="file-download" on-click="{{ act }}"></paper-icon-button>
+        <a id="act">
+          <paper-icon-button icon="file-download"></paper-icon-button>
+        </a>
       </div>
       <div id="image"></div>
     </div>
@@ -33,7 +35,7 @@
       #base:hover #image {
         transform: translate(744px, 0);
       }
-      #act::shadow core-icon {
+      #act paper-icon-button::shadow core-icon {
         width: 256px;
         height: 256px;
         fill: #9e9e9e;

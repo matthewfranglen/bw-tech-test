@@ -15,9 +15,10 @@ class CardElement extends PolymerElement {
   CardElement.created() : super.created();
 
   void domReady() {
-    Element element = $['image'];
-
-    element.style.backgroundImage = "url('static/${image}')";
+    $['image'].style.backgroundImage = "url('static/${image}')";
+    ($['act'] as AnchorElement)
+      ..href = "download/${download}"
+      ..download = download;
   }
 }
 
