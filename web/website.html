@@ -85,14 +85,20 @@
     </style>
   </head>
   <body unresolved>
-    <h1>Website</h1>
-
     <div layout horizontal>
-        <span flex></span>
-        <x-card>
-            This is some sample content.
+      <span flex></span>
+      <div layout vertical>
+        <x-card image="good.png" download="good.zip">
+          This is some sample content.
         </x-card>
-        <span flex></span>
+        <x-card image="bad.png" download="bad.zip">
+          This is some sample content.
+        </x-card>
+        <x-card image="ugly.png" download="ugly.zip">
+          This is some sample content.
+        </x-card>
+      </div>
+      <span flex></span>
     </div>
 
     <!-- bootstrap polymer -->
