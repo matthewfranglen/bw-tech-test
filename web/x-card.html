@@ -1,0 +1,43 @@
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/core_elements/core_tooltip.html">
+<link rel="import" href="packages/paper_elements/paper_icon_button.html">
+<polymer-element name="x-card">
+  <template>
+    <div id="base" layout vertical>
+      <div id="info" layout horizontal center flex>
+        <div layout horizontal center-justified flex>
+          <content></content>
+        </div>
+        <core-tooltip label="download">
+          <paper-icon-button id="act" icon="file-download" on-click="{{ act }}"></paper-icon-button>
+        </core-tooltip>
+      </div>
+      <div id="image"></div>
+    </div>
+    <style>
+      #image, #base {
+        width: 741px;
+        height: 244px;
+      }
+      #base {
+        position: relative;
+      }
+      #image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(static/good.png) no-repeat;
+
+        transition: 1s ease-in-out;
+      }
+      #base:hover #image {
+        transform: translate(744px, 0);
+      }
+      #act::shadow core-icon {
+        width: 256px;
+        height: 256px;
+      }
+    </style>
+  </template>
+  <script type="application/dart" src="x-card.dart"></script>
+</polymer-element>
