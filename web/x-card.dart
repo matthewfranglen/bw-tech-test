@@ -9,16 +9,15 @@ import 'package:polymer/polymer.dart';
 @CustomTag('x-card')
 class CardElement extends PolymerElement {
 
-  @published String image = 'good.png';
-  @published String download = 'good.zip';
+  @published String archetype = 'good';
 
   CardElement.created() : super.created();
 
   void domReady() {
-    $['image'].style.backgroundImage = "url('static/${image}')";
+    $['image'].style.backgroundImage = "url('static/${archetype}.png')";
     ($['act'] as AnchorElement)
-      ..href = "download/${download}"
-      ..download = download;
+      ..href = "download/${archetype}.zip"
+      ..download = "${archetype}.zip";
   }
 }
 
