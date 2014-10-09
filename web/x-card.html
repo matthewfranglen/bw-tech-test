@@ -3,7 +3,7 @@
 <link rel="import" href="packages/paper_elements/paper_icon_button.html">
 <polymer-element name="x-card">
   <template>
-    <div id="base" layout vertical>
+    <div id="base" class="{{ archetype }}" layout vertical>
       <div id="info" layout horizontal center flex>
         <div layout horizontal center-justified flex>
           <content></content>
@@ -35,6 +35,12 @@
       }
       #base:hover #image {
         transform: translate(744px, 0);
+      }
+      #base.bad:hover #image {
+        transform: translate(-744px, 0);
+      }
+      #base.ugly:hover #image {
+        transform: translate(0, 244px);
       }
       #act paper-icon-button::shadow core-icon {
         width: 256px;
